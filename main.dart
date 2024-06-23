@@ -1,16 +1,64 @@
 
 
+import 'dart:io';
+
 void main() {
-  dList();
+  dMaps();
+}
+
+void starter(){
+  print("What are you wan to test in Dart : ");
+  print("1: Test var \n");
+  print("2: Test Data Types \n");
+
+  String? inputString = stdin.readLineSync();
+
+  try {
+    int input = int.parse(inputString!);
+
+    case
+
+  }
+
+}
+
+loops(){
+  var num = 7;
+
+}
+
+dMaps(){
+  // Maps! => Key, Value Pairs
+  var users = {"name": "Ahmad", "age": 24};
+  print(users);
+  print("User name = ${users['name']} \nAge = ${users['age'].toString()}");
+
+  // Show keys and values
+  print("keys = ${users.keys}\n values ${users.values} ");
+
+  // show maps length
+  print("Maps length ${users.length}");
+
+  // Add something
+  users["name"] = "Idriss";
+  print("users with update of name $users");
+  
+  // Add many things
+  users.addAll({"name": "Hashim", "age": 13});
+  print(users);
+
+  // Remove something
+  users.remove("Idriss");
+  print("Users $users");
 }
 
 dList(){
   // Lists
   var myList = [1, 3, 6, 9, 12];
   print(myList);
-  print("First position : "+myList[0].toString());
+  print("First position : "+ myList[0].toString());
 
-  // Change an itemvalue with there index
+  // Change an item value with there index
   myList[0] = 21;
   print("New list with updated index 1 = "+ myList.toString());
 
@@ -27,7 +75,7 @@ dList(){
   print("Updated empty list ="+ emptyList.toString());
 
   // Insert at specific position (position, item)
-  print("list befire insert $myList" );
+  print("list before insert $myList" );
   myList.insert(2, 35);
   print("list after insert 35 at position 2 = "+ myList.toString());
 
@@ -47,6 +95,7 @@ dList(){
   // Remove from specific Location
   mixedList.removeAt(3);
   print("Remove at index 3 $mixedList");
+
 }
 
 // Data Types
