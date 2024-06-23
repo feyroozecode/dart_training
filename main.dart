@@ -1,15 +1,12 @@
-
-
 import 'dart:io';
 
 void main() {
   methodLauncher();
 }
 
-/// method launcher
+/// method launcher. It using user input
 Function methodLauncher(){
   bool boucle = false;
-
 
   /// main loop
   do{
