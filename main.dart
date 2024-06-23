@@ -3,10 +3,11 @@
 import 'dart:io';
 
 void main() {
-  methodLuancher();
+  methodLauncher();
 }
 
-Function methodLuancher(){
+/// method launcher
+Function methodLauncher(){
   bool boucle = false;
 
 
@@ -19,8 +20,11 @@ Function methodLuancher(){
     print("3: Test List \n");
     print("4: Test Maps \n ");
     print("5: Test Loops \n");
+    print("6: Test Conditions \n");
+    print("7: Test functions \n");
     print(":");
 
+    /// getting number from user Input
     String? inputString = stdin.readLineSync();
 
     try {
@@ -36,7 +40,11 @@ Function methodLuancher(){
         case 4:
           return dMaps();
         case 5:
-          return loops();
+          return dLoops();
+        case 6:
+          return dCondition();
+        case 7:
+          return dFunc();
         default:
           return (){
             print("anything");
@@ -64,7 +72,45 @@ Function methodLuancher(){
   return (){};
 }
 
-loops(){
+
+dFunc(){
+
+  print("Test functions : ");
+  print("Function 1");
+  print(userDataGetterFuncWithNamedParams(name: "Ahmad", age: 24));
+  print("Function 2");
+  print(userDataGetterFunc("Fatouma"));
+}
+
+userDataGetterFuncWithNamedParams({required String name,required int age}){
+
+  return "Salam Aleykum ${name} , welcome i know that your age is ${age.toString()}";
+}
+
+userDataGetterFunc(String name){
+  return "Hi ${name}";
+}
+
+dCondition(){
+  String? ageStr = stdin.readLineSync();
+
+  try {
+    int age = int.parse(ageStr!);
+
+    if(age <= 18){
+      print("Warning, is for Major only if you'r age exced 18");
+    } else if (age >= 60){
+      print("Salam Akeykoum Enter ! ");
+    } else {
+      print("Give you're age ");
+    }
+  } catch(e){
+    print("Error getting user age: $e");
+  }
+
+}
+
+dLoops(){
   var num = 7;
 
   // reverse fo loops
