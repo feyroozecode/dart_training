@@ -3,27 +3,87 @@
 import 'dart:io';
 
 void main() {
-  dMaps();
+  methodLuancher();
 }
 
-void starter(){
-  print("What are you wan to test in Dart : ");
-  print("1: Test var \n");
-  print("2: Test Data Types \n");
+Function methodLuancher(){
+  bool boucle = false;
 
-  String? inputString = stdin.readLineSync();
 
-  try {
-    int input = int.parse(inputString!);
+  /// main loop
+  do{
 
-    case
+    print("What you wan to test in Dart Choose One : ");
+    print("1: Test var \n");
+    print("2: Test Data Types \n");
+    print("3: Test List \n");
+    print("4: Test Maps \n ");
+    print("5: Test Loops \n");
+    print(":");
 
-  }
+    String? inputString = stdin.readLineSync();
 
+    try {
+      int input = int.parse(inputString!);
+
+      switch(input){
+        case 1:
+          return variables();
+        case 2:
+          return dataTypes();
+        case 3:
+          return dList();
+        case 4:
+          return dMaps();
+        case 5:
+          return loops();
+        default:
+          return (){
+            print("anything");
+          };
+
+      }
+
+    } catch(e){
+      print("Error ${e.runtimeType}} " );
+    }
+
+
+    print("Continuez (O:Oui, N(Non) : ");
+    String? userResponse = stdin.readLineSync();
+    if(userResponse == "O"){
+      boucle = true;
+    } else if(userResponse == "N"){
+      boucle = false;
+      print("Bye");
+    } else {
+      print("Ressayer plus tard ");
+    }
+  } while(boucle);
+
+  return (){};
 }
 
 loops(){
   var num = 7;
+
+  // reverse fo loops
+  for (var i = num; i >= 1; i--){
+    print("i = $i");
+  }
+
+  // for in loops
+  var names = ["Issa", "Ahmad", "Belko"];
+  for (var name in names){
+    print("User name is ${name}");
+  }
+
+  /// while loo
+  print("While loops");
+  while(num >= 1){
+    print(num);
+    num--;
+  }
 
 }
 
